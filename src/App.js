@@ -123,7 +123,7 @@ function App() {
               } else {
                 return <div className="album">
                   <a onClick={openPostHandler}><img className="img image1" src={mediaItem.media_url} alt='' /></a>
-                  {/* <i class="fas fa-download image2"></i> */}
+                  <i class="fas fa-download image2"></i>
                   {/* <div className="caption"><p>{mediaItem.caption}</p></div> */}
                   {/* <div>{mediaItem.timestamp.slice(0, mediaItem.timestamp.length - 14)}</div>
               <div>{mediaItem.timestamp.slice(mediaItem.timestamp.length - 13, mediaItem.timestamp.length - 8)}</div> */}
