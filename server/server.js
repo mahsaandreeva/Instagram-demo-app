@@ -15,7 +15,7 @@ const getToken = (code) => {
     formData.append('client_id', '380557359779853');
     formData.append('client_secret', '9bb69ea54c9259e84317a555e9a507d9');
     formData.append('grant_type', 'authorization_code');
-    formData.append('redirect_uri', 'https://2d4bdbb61cad.ngrok.io/');
+    formData.append('redirect_uri', 'https://b0a7e7d0f4e3.ngrok.io/');
     formData.append('code', code);
 
     return fetch('https://api.instagram.com/oauth/access_token', {

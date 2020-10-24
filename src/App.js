@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     if (!instagramCode) {
-      window.location = `https://api.instagram.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=https://2d4bdbb61cad.ngrok.io/&scope=user_profile,user_media&response_type=code`
+      window.location = `https://api.instagram.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=https://b0a7e7d0f4e3.ngrok.io/&scope=user_profile,user_media&response_type=code`
     }
 
     fetch(`http://localhost:8080/${instagramCode}`, {
