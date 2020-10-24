@@ -107,7 +107,7 @@ function App() {
             <div>POSTS</div>
             <div>IGTV</div>
             <div>SAVED</div>
-            <div>TAGGED</div>
+            <div>TAGS</div>
           </div>
         </div>
         <div className="grid">
