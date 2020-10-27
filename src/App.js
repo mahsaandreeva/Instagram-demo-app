@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Post from "./post";
+import TopPanel from "./topPanel";
+import Stories from "./stories";
+import Navigation from "./nav";
 
 const CLIENT_ID = '380557359779853'
 
@@ -13,7 +15,7 @@ function App() {
 
   useEffect(() => {
     if (!instagramCode) {
-      window.location = `https://api.instagram.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=https://b0a7e7d0f4e3.ngrok.io/&scope=user_profile,user_media&response_type=code`
+      window.location = `https://api.instagram.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=https://da5caa8f6ad9.ngrok.io/&scope=user_profile,user_media&response_type=code`
     }
 
     fetch(`http://localhost:8080/${instagramCode}`, {
@@ -49,25 +51,11 @@ function App() {
 
   return (
     <div>
-      {
-        isPostOpen ? <Post /> : null
-      }
       <div onClick={closeHandler} className="App">
         <nav>
-          <div className="topPanel">
-            <div className="instagram"><h2>Instagram</h2></div>
-            <input className="searchInput" type="text" placeholder="Search" autocapitalize="none" />
-            <div className="icons">
-              <div><img className="icon" src="https://www.flaticon.com/svg/static/icons/svg/1946/1946488.svg" alt="" /></div>
-              <div><img className="icon" src="https://www.flaticon.com/svg/static/icons/svg/786/786205.svg" alt="" /></div>
-              <div><img className="icon" src="https://www.flaticon.com/svg/static/icons/svg/2948/2948031.svg" alt="" /></div>
-              <div><img className="icon" src="https://www.flaticon.com/premium-icon/icons/svg/2961/2961957.svg" alt="" /></div>
-              <div><img className="icon profile" src="https://sun9-26.userapi.com/impf/c854320/v854320585/18e145/m72bUXPpXpE.jpg?size=1280x962&quality=90&sign=7008879cf7b76d5b1cdbfb858e224778" alt="" /></div>
-            </div>
-          </div>
+          <TopPanel />
         </nav>
         <header>
-          <div></div>
           <section className="section">
             <div><img className="profileImg" src="https://sun9-26.userapi.com/impf/c854320/v854320585/18e145/m72bUXPpXpE.jpg?size=1280x962&quality=90&sign=7008879cf7b76d5b1cdbfb858e224778" alt="" /></div>
             <div className="rightSide">
@@ -87,50 +75,28 @@ function App() {
             </div>
           </section>
         </header>
-        <div className="stories">
-          <div>
-            <img className="storiesImg" src="https://sun9-26.userapi.com/impf/c854320/v854320585/18e145/m72bUXPpXpE.jpg?size=1280x962&quality=90&sign=7008879cf7b76d5b1cdbfb858e224778" alt="" />
-            <div className="storiesCaption"><p><strong>my stories</strong></p></div>
-          </div>
-          <div>
-            <img className="storiesImg" src="https://sun9-26.userapi.com/impf/c854320/v854320585/18e145/m72bUXPpXpE.jpg?size=1280x962&quality=90&sign=7008879cf7b76d5b1cdbfb858e224778" alt="" />
-            <div className="storiesCaption"><p><strong>my stories</strong></p></div>
-          </div>
-          <div>
-            <img className="storiesImg" src="https://sun9-26.userapi.com/impf/c854320/v854320585/18e145/m72bUXPpXpE.jpg?size=1280x962&quality=90&sign=7008879cf7b76d5b1cdbfb858e224778" alt="" />
-            <div className="storiesCaption"><p><strong>my stories</strong></p></div>
-          </div>
-        </div>
-        {/* <div>{me.mediaCount}</div> */}
-        <div className="navigation">
-          <div className="list">
-            <div>POSTS</div>
-            <div>IGTV</div>
-            <div>SAVED</div>
-            <div>TAGS</div>
-          </div>
-        </div>
+        <Stories />
+        <Navigation />
         <div className="grid">
           {me.media.map(mediaItem => {
             if (mediaItem.media_type !== "VIDEO") {
               if (mediaItem.media_type === "IMAGE") {
-                return <>
-                  <a onClick={openPostHandler}><img className="img" src={mediaItem.media_url} alt='' /></a>
-                  {/* <div className="caption"><p>{mediaItem.caption}</p></div> */}
-                  {/* <div>{mediaItem.timestamp.slice(0, mediaItem.timestamp.length - 14)}</div>
-              <div>{mediaItem.timestamp.slice(mediaItem.timestamp.length - 13, mediaItem.timestamp.length - 8)}</div> */}
-                </>
+                return <div>
+                  <div>
+                    <a onClick={openPostHandler}><img className="img" src={mediaItem.media_url} alt='' /></a>
+                  </div>
+                </div>
               } else {
-                return <div className="album">
-                  <a onClick={openPostHandler}><img className="img image1" src={mediaItem.media_url} alt='' /></a>
-                  {/* <div className="caption"><p>{mediaItem.caption}</p></div> */}
-                  {/* <div>{mediaItem.timestamp.slice(0, mediaItem.timestamp.length - 14)}</div>
-              <div>{mediaItem.timestamp.slice(mediaItem.timestamp.length - 13, mediaItem.timestamp.length - 8)}</div> */}
+                return <div>
+                  <div>
+                    <a onClick={openPostHandler}><img className="img image1" src={mediaItem.media_url} alt='' /></a>
+                  </div>
                 </div>
               }
             }
           })}
         </div>
+        {me.media.filter()}
       </div>
     </div>
   );

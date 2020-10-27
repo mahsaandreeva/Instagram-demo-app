@@ -1,0 +1,27 @@
+.navigation {
+    display: flex;
+    position: relative;
+    width: 60%; 
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    height: 60px;
+    border-top: 1px solid rgb(209, 203, 203);
+    align-items: center;
+}
+@media (max-width: 500px) {
+    .navigation {
+      width: 100%;
+      position: absolute;
+      top: 320px;
+      border-bottom: 1px solid rgb(209, 203, 203);
+      /* justify-content: space-around; */
+    }
+}
+
+.list {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: auto;
+}
