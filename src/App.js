@@ -3,6 +3,8 @@ import './App.css';
 import TopPanel from "./topPanel";
 import Stories from "./stories";
 import Navigation from "./nav";
+import Post from "./post";
+import './postAndCloser.css';
 
 const CLIENT_ID = '380557359779853'
 
@@ -51,53 +53,57 @@ function App() {
 
   return (
     <div>
-      <div onClick={closeHandler} className="App">
-        <nav>
-          <TopPanel />
-        </nav>
-        <header>
-          <section className="section">
-            <div><img className="profileImg" src="https://sun9-26.userapi.com/impf/c854320/v854320585/18e145/m72bUXPpXpE.jpg?size=1280x962&quality=90&sign=7008879cf7b76d5b1cdbfb858e224778" alt="" /></div>
-            <div className="rightSide">
-              <div className="nameEditSettings">
-                <h2 className="nickname">{me.username}</h2>
-                <div className="edit"><button className="btn btnEdit"><strong>Edit Profile</strong></button></div>
-                <button className="btn settings"><img className="icon" src="https://www.flaticon.com/premium-icon/icons/svg/2956/2956788.svg" alt="" /></button>
-              </div>
-              <div className="secondString">
-                <div><strong>{me.mediaCount}</strong> posts</div>
-                <div className="followers"><strong>190</strong> followers</div>
-                <div className="followers"><strong>245</strong> following</div>
-              </div>
-              <div className="thirdString">
-                <p className="name"><strong>Masha Andreeva</strong></p>
-              </div>
-            </div>
-          </section>
-        </header>
-        <Stories />
-        <Navigation />
-        <div className="grid">
-          {me.media.map(mediaItem => {
-            if (mediaItem.media_type !== "VIDEO") {
-              if (mediaItem.media_type === "IMAGE") {
-                return <div>
-                  <div>
-                    <a onClick={openPostHandler}><img className="img" src={mediaItem.media_url} alt='' /></a>
-                  </div>
+      {isPostOpen ? <div>
+        <div><Post /></div>
+        <div className="closer" onClick={closeHandler}><img src="https://www.flaticon.com/svg/static/icons/svg/1828/1828774.svg" alt="" /></div>
+      </div> :
+        <div className="App">
+          <nav>
+            <TopPanel />
+          </nav>
+          <header>
+            <section className="section">
+              <div><img className="profileImg" src="https://sun9-26.userapi.com/impf/c854320/v854320585/18e145/m72bUXPpXpE.jpg?size=1280x962&quality=90&sign=7008879cf7b76d5b1cdbfb858e224778" alt="" /></div>
+              <div className="rightSide">
+                <div className="nameEditSettings">
+                  <h2 className="nickname">{me.username}</h2>
+                  <div className="edit"><button className="btn btnEdit"><strong>Edit Profile</strong></button></div>
+                  <button className="btn settings"><img className="icon" src="https://www.flaticon.com/premium-icon/icons/svg/2956/2956788.svg" alt="" /></button>
                 </div>
-              } else {
-                return <div>
-                  <div>
-                    <a onClick={openPostHandler}><img className="img image1" src={mediaItem.media_url} alt='' /></a>
-                  </div>
+                <div className="secondString">
+                  <div><strong>{me.mediaCount}</strong> posts</div>
+                  <div className="followers"><strong>190</strong> followers</div>
+                  <div className="followers"><strong>245</strong> following</div>
                 </div>
+                <div className="thirdString">
+                  <p className="name"><strong>Masha Andreeva</strong></p>
+                </div>
+              </div>
+            </section>
+          </header>
+          <Stories />
+          <Navigation />
+          <div className="grid">
+            {me.media.map(mediaItem => {
+              if (mediaItem.media_type !== "VIDEO") {
+                if (mediaItem.media_type === "IMAGE") {
+                  return <div>
+                    <div>
+                      <a onClick={openPostHandler}><img className="img" src={mediaItem.media_url} alt='' /></a>
+                    </div>
+                  </div>
+                } else {
+                  return <div>
+                    <div>
+                      <a onClick={openPostHandler}><img className="img image1" src={mediaItem.media_url} alt='' /></a>
+                    </div>
+                  </div>
+                }
               }
-            }
-          })}
-        </div>
-        {me.media.filter()}
-      </div>
+            })}
+          </div>
+        </div>}
+
     </div>
   );
 }

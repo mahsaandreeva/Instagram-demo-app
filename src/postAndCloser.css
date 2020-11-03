@@ -1,0 +1,50 @@
+.postAndCloser {
+    display: flex;
+    position: relative;
+}
+.post {
+display: flex;
+position: absolute;
+}
+.closer {
+    position: fixed;
+    width: 180px;
+    height: 100%;
+    top: 50px;
+    right: 50px;
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+    .closer {
+        width: 100%;
+        height: 25%;
+        top: 0px;
+    }
+}
+@media (max-width: 500px) {
+    .closer {
+        width: 100%;
+        height: 15%;
+        right: 0px;
+        top: 0px;
+    }
+}
+.closer img {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+    .closer img {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    }
+}
+@media (max-width: 500px) {
+    .closer img {
+        right: 20px;
+        top: 20px;
+    }
+}

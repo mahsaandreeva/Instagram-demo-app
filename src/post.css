@@ -1,22 +1,237 @@
+button :hover {
+    color: blue;
+}
+.postDiv {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-color: rgba(12, 11, 11, 0.877);
+    width: 100%;
+    height: 1500px;
+}
 .post {
     display: flex;
     position: absolute;
-    top: 300px;
-    left: 500px;
+    top: 50px;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
 }
-.postImg {
-    width: 300px;
-    height: 300px;
+@media (min-width: 500px) and (max-width: 1024px) {
+    .post {
+        width: 75%;
+        top: 400px;
+    }
 }
 @media (max-width: 500px) {
-.post {
+    .post {
     display: flex;
-    position: fixed;
-    top: 340px;
-    left: 100px;
+    position: absolute;
+    justify-content: center;
+    margin-top: 80px;
+    width: 100%;
+    height: 550px;
+    background-color: rgb(255, 255, 255);
+    }
 }
 .postImg {
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: auto;
 }
-}  
+@media (min-width: 500px) and (max-width: 1024px) {
+    .postImg {
+        width: 65%;
+    }
+}
+@media (max-width: 500px) {
+    .postImg {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    width: 90%;
+    }
+}
+.captionDiv {
+    background-color: rgb(255, 255, 255);
+    width: 430px;
+}
+.captionSection {
+    border-bottom: 1px solid rgb(223, 211, 211);
+}
+@media (max-width: 500px) {
+    .captionSection {
+        border: 0px;
+    }
+}
+.firstSec {
+    display: flex;
+    height: 13%;
+}
+@media (max-width: 500px) {
+    .firstSec {
+        height: 10%;
+    }
+}
+.firstSec div {
+    display: flex;
+    position: relative;
+    width: 90%;
+    }
+.firstSec img {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+    .firstSec img {
+        top: 15px;
+    }
+}    
+.firstSec p {
+    position: absolute;
+    left: 70px;
+    top: 32px;
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+    .firstSec p {
+        top: 22px;
+    }
+}    
+.secondSec {
+    display: flex;
+    height: 20%;
+}
+@media (max-width: 500px) {
+    .secondSec {
+        visibility: hidden;
+    }
+}
+.secondSec div {
+    display: flex;
+    position: relative;
+    width: 90%; 
+    flex-direction: column;
+}
+.secondSec img {
+    position: absolute;
+    left: 25px;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.secondSec p {
+    position: absolute;
+    left: 70px;
+    top: 10px;
+}
+.comments {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+@media (max-width: 500px) {
+    .comments {
+        visibility: hidden;
+    }
+}
+.comment {
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 50px;
+
+}
+.comment img {
+    position: absolute;
+    left: 25px;
+    /* top: 10px; */
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.comment p {
+    position: absolute;
+    left: 70px;
+    /* top: 10px; */
+}
+.thirdSec {
+    height: 17%;
+}
+@media (max-width: 500px) {
+    .thirdSec {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 20%;
+    }
+}
+.thirdSecIcons {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.likeCommentShare {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 30%;
+    height: 50%;
+}
+.save {
+    display: flex;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: auto;
+    height: 50%;
+}
+.likedBy {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin-left: 20px;
+}
+.likedBy img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+@media (max-width: 500px) {
+    .likedBy {
+        width: 80%;
+    }
+}
+.data {
+    color: rgba(56, 54, 54, 0.568);
+    margin-left: 30px;
+}
+.fourthSec {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    height: 8%;
+}
+@media (max-width: 500px) {
+    .fourthSec {
+        visibility: hidden;
+    }
+}
+.fourthSec input {
+    width: 800%;
+    height: 100%;
+    border: 0px;
+    margin-left: 15px;
+}
+.fourthSec button {
+    height: 100%;
+    width: 20%;
+    background-color: white;
+    color: blue;
+}

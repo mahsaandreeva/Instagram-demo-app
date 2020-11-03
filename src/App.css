@@ -1,5 +1,6 @@
 .body {
   background-color: rgb(245, 244, 244);
+  position: relative;
 }
 a {
   color: black;
@@ -10,24 +11,51 @@ a {
 }
 .section {
   display: flex;
-  /* position: relative; */
+  position: relative;
+  top: 50px;
   align-items: center; 
   justify-content: space-evenly;
   flex-direction: row;
   width: 40%;
   margin: auto;
 }
+@media (max-width: 500px) {
+  .section {
+    width: 100%;
+    height: 150px;
+    margin: 0px;
+  }
+}
 .rightSide {
   width: 100%;
   margin: 50px;
   padding: 0px;
 }
+@media (min-width: 500px) and (max-width: 1024px) {
+  .rightSide {
+  margin-left: 150px;
+  padding: 0px;
+  }
+  }
+@media (max-width: 500px) {
+  .rightSide {
+    position: relative;
+    top: 30px;
+    margin: 0px;
+    }
+}
 .nameEditSettings {
   display: flex;
   position: relative;
-  align-items: flex-start;
+  top: 0px;
+  left: 0px;
   width: 100%;
 }
+/* @media (max-width: 500px) {
+  .nameEditSettings {
+    
+  }
+} */
 .nickname {
   font-size: 28px;
   font-weight: 400;
@@ -36,8 +64,8 @@ a {
   .nickname {
     display: flex;
     position: absolute;
-    top: -30px;
-    left: -30px;
+    top: -85px;
+    left: 120px;
     font-size: 28px;
   }
 }
@@ -52,8 +80,9 @@ a {
   .edit {
     display: flex;
     position: absolute;
-    top: 0px;
-    left: -50px;
+    top: -40px;
+    left: 100px;
+    margin: 0px;
   }
 }
 .btnEdit {
@@ -65,9 +94,10 @@ a {
 }
 @media (max-width: 500px) {
   .settings {
+    display: flex;
     position: absolute;
-    top: -30px;
-    left: 160px;
+    top: -50px;
+    left: 200px;
   }
 }
 .secondString {
@@ -85,13 +115,14 @@ a {
   .secondString {
     display: flex;
     position: absolute;
-    top: 300px;
-    left: 0px;
+    top: 140px;
     justify-content: space-evenly;
+    margin: 0px 0px 0px 0px;
+    width: 100%;
     font-size: 14px;
-    border-top: 1px solid rgb(209, 203, 203);
+    border-top: 1px solid rgb(190, 182, 182);
     align-items: center;
-    height: 50px;
+    height: 60px;
   }
 }
 .followers {
@@ -112,8 +143,8 @@ a {
   .name {
     display: flex;
     position: absolute;
-    left: -150px;
-    top: 60px;
+    left: 10px;
+    top: 5px;
   }
 }
 
@@ -123,12 +154,21 @@ height: 150px;
 border-radius: 60%;
 }
 
+@media (min-width: 500px) and (max-width: 1024px) {
+  .profileImg {
+    display: flex;
+    position: absolute;
+    top: 100px;
+    left: 120px;
+  }
+  }
+
 @media (max-width: 500px) {
   .profileImg {
     display: flex;
     position: absolute;
-    top: 80px;
-    left: 30px;
+    top: 20px;
+    left: 20px;
     width: 80px;
     height: 80px;
   }
@@ -138,16 +178,26 @@ border-radius: 60%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   /* height: 258px; */
+  position: relative;
+  top: 70px;
   width: 50%;
   margin-left: 305px;
   box-sizing: border-box;
 }
 
+@media (min-width: 500px) and (max-width: 1024px) {
+  .grid {
+  margin: 35px;
+  margin-top: -100px;
+  padding: 0px;
+  }
+  }
+
 @media (max-width: 500px) {
     .grid {
       width: 100%;
       margin: 0px;
-      margin-top: 265px;
+      margin-top: 180px;
       grid-gap: 3px;
     }
 }  
@@ -157,6 +207,13 @@ border-radius: 60%;
   height: 278px;
   margin: 13px;
 } 
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .grid .img {
+  width: 293px;
+  height: 293px;
+  }
+  }
 
 @media (max-width: 500px) {
   .grid .img {

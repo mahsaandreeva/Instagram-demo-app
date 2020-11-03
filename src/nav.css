@@ -1,27 +1,37 @@
 .navigation {
     display: flex;
     position: relative;
+    top: 70px;
     width: 60%; 
     margin: auto;
-    margin-top: 50px;
     margin-bottom: 0px;
     height: 60px;
     border-top: 1px solid rgb(209, 203, 203);
     align-items: center;
 }
+@media (min-width: 500px) and (max-width: 1024px) {
+    .navigation {
+    width: 90%;
+    }
+    }
 @media (max-width: 500px) {
     .navigation {
-      width: 100%;
-      position: absolute;
-      top: 320px;
-      border-bottom: 1px solid rgb(209, 203, 203);
+    width: 100%;
+    position: absolute;
+    top: 350px;
+    border-bottom: 1px solid rgb(209, 203, 203);
+    height: 50px;
       /* justify-content: space-around; */
     }
 }
-
 .list {
     display: flex;
     width: 80%;
     justify-content: space-around;
     margin: auto;
 }
+@media (min-width: 500px) and (max-width: 1024px) {
+    .list {
+    width: 60%;
+    }
+    }
